@@ -1,4 +1,4 @@
-# Curie Desktop.md
+# Curie Desktop
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
