@@ -1,20 +1,18 @@
-# Curie Desktop
+# Curie (Pre-Alpha)
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## About
 
-- Open Source desktop App for small schools management made with Flutter Desktop.
+- Open Source desktop App for small schools management made with Flutter.
 - Licensed under [MIT License](https://opensource.org/licenses/MIT)
 
 > It's FREE -> "Free as in freedom"
 
-<!--
 ## Commit Conventions
 
 - Please follow these [Commit Conventions](https://commitlint.js.org/#/concepts-commit-conventions).
 - Also well documented in [Conventional Commits](https://www.conventionalcommits.org/en).
--->
 
 ## Pull Request
 
