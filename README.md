@@ -2,6 +2,10 @@
 
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
+<h1 align="center">
+    <img alt="Currie Concept" title="Currie Concept" src=".github/curie_desktop_figma.png" />
+</h1>
+
 ## About
 
 - Open Source desktop App for small schools management made with Flutter.
