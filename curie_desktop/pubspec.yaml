@@ -1,0 +1,45 @@
+name: curie_desktop
+description: (Pre-Alpha) An open-source app for managing small schools, made with Flutter.
+version: v2021.1.0-Pre-Alpha
+
+# Prevent accidental publishing to pub.dev.
+publish_to: 'none'
+
+environment:
+  sdk: ">=2.15.0 <3.0.0"
+
+dependencies:
+  google_fonts: ^2.0.0
+  photo_view: ^0.13.0
+  # freezed: ^1.1.0
+  crypto: ^3.0.1
+  hive: ^2.0.4
+  hive_flutter: ^1.1.0
+  path_provider: ^2.0.8
+  # json_annotation: ^4.4.0
+  flutter_riverpod: ^1.0.2
+  package_info_plus: ^1.3.0
+
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^2.1.5
+  hive_generator: ^1.1.1
+  # json_serializable: ^6.1.1
+
+  flutter_lints: ^1.0.4
+
+flutter:
+  uses-material-design: true
+
+  # Enable generation of localized Strings from arb files.
+  generate: true
+
+  assets:
+    # Add assets from the images directory to the application.
+    - assets/images/

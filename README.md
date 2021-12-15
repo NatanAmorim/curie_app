@@ -1,10 +1,7 @@
 # Curie (Pre-Alpha)
 
-![license](https://img.shields.io/badge/license-MIT-blue.svg)
-
-<h1 align="center">
-    <img alt="Currie Concept" title="Currie Concept" src=".github/curie_desktop_figma.png" />
-</h1>
+![license](https://img.shields.io/badge/license-MIT-green.svg)
+![Desktop](https://img.shields.io/badge/Desktop-v2021.1.0%20PRE%20ALPHA-blue)
 
 ## About
 
@@ -13,10 +10,11 @@
 
 > It's FREE -> "Free as in freedom"
 
-## Commit Conventions
+## Concept
 
-- Please follow these [Commit Conventions](https://commitlint.js.org/#/concepts-commit-conventions).
-- Also well documented in [Conventional Commits](https://www.conventionalcommits.org/en).
+<h1 align="center">
+    <img alt="Currie Concept" title="Currie Concept" src=".github/curie_desktop_figma.png" />
+</h1>
 
 ## Pull Request
 
