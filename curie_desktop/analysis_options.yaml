@@ -22,97 +22,65 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-  # https://dart-lang.github.io/linter/lints/
     always_use_package_imports: true # Avoid relative imports for files in lib/.
     avoid_print: true  # Avoid print calls in production code.
     avoid_empty_else: true # Avoid empty else statements.
-    avoid_slow_async_io: true # Avoid slow async dart:io methods.
     empty_statements: true # Avoid empty statements.
     iterable_contains_unrelated_type: true # Invocation of Iterable.contains with references of unrelated types.
     list_remove_unrelated_type: true # Invocation of remove with references of unrelated types.
     no_duplicate_case_values: true # Don't use more than one case with same value.
     no_logic_in_create_state: true # Don't put any logic in createState.
-    prefer_void_to_null: true # Don't use the Null type, unless you are positive that you don't want void.
-    throw_in_finally: true # Avoid throw in finally block.
-    unnecessary_statements: true # Avoid using unnecessary statements.
     unrelated_type_equality_checks: true # Equality operator == invocation with references of unrelated types.
     use_key_in_widget_constructors: true # Use key in widget constructors.
     valid_regexps: true # Use valid regular expression syntax.
-    always_declare_return_types: true # Declare method return types.
-    always_put_control_body_on_new_line: true # Separate the control structure expression from its statement.
     always_put_required_named_parameters_first: false # Put required named parameters first.
     always_require_non_null_named_parameters: true # Specify @required on named parameters without defaults
-    always_specify_types: false # Specify type annotations.
-    annotate_overrides: true # Annotate overridden members.
     avoid_bool_literals_in_conditional_expressions: true # Avoid bool literals in conditional expressions.
     avoid_catches_without_on_clauses: true # Avoid catches without on clauses.
-    avoid_equals_and_hash_code_on_mutable_classes: true # Avoid overloading operator == and hashCode on classes not marked @immutable.
     avoid_field_initializers_in_const_classes: true # Avoid field initializers in const classes.
-    avoid_multiple_declarations_per_line: true # Don't declare multiple variables on a single line.
-    avoid_positional_boolean_parameters: true # Avoid positional boolean parameters.
-    avoid_returning_null_for_void: true # Avoid returning null for void.
-    avoid_setters_without_getters: true # Avoid setters without getters.
-    avoid_unnecessary_containers: true # Avoid unnecessary containers.
     avoid_types_on_closure_parameters: false # Avoid annotating types for function expression parameters.
     avoid_unused_constructor_parameters: true # Avoid defining unused parameters in constructors.
-    avoid_void_async: true # Avoid async functions that return void.
     camel_case_extensions: true # Name extensions using UpperCamelCase.
     camel_case_types: true # Name types using UpperCamelCase.
-    cascade_invocations: true # Cascade consecutive method invocations on the same reference.
+    cascade_invocations: false # Cascade consecutive method invocations on the same reference.
     constant_identifier_names: false # Prefer using lowerCamelCase for constant names
     curly_braces_in_flow_control_structures: true # DO use curly braces for all flow control structures.
     deprecated_consistency: true # Missing deprecated annotation.
     directives_ordering: true # Adhere to Effective Dart Guide directives sorting conventions.
     empty_catches: true # Avoid empty catch blocks.
     empty_constructor_bodies: true # Use ; instead of {} for empty constructor bodies.
-    eol_at_end_of_file: true # Put a single newline at end of file.
     exhaustive_cases: true # Define case clauses for all constants in enum-like classes.
     file_names: true # Name source files using lowercase_with_underscores.
-    flutter_style_todos: true # flutter_style_todos.
     implementation_imports: true # Don't import implementation files from another package.
     leading_newlines_in_multiline_strings: true # Start multiline strings with a newline.
-    library_names: true # Name libraries using lowercase_with_underscores.
-    library_prefixes: true # Use lowercase_with_underscores when specifying a library prefix.
     lines_longer_than_80_chars: false # Avoid lines longer than 80 characters.
-    non_constant_identifier_names: true # Name non-constant identifiers using lowerCamelCase.
-    noop_primitive_operations: true # Noop primitive operations.
     null_check_on_nullable_type_parameter: true # Don't use null check on a potentially nullable type parameter.
     null_closurFes: true # Do not pass null as an argument where a closure is expected.
     only_throw_errors: true # Only throw instances of classes extending either Exception or Error.
     package_api_docs: false # Provide doc comments for all public APIs.
-    package_prefixed_library_names: true # Prefix library names with the package name and a dot-separated path.
     parameter_assignments: true # Don't reassign references to parameters of functions or methods.
     prefer_adjacent_string_concatenation: true # Use adjacent strings to concatenate string literals.
     prefer_asserts_in_initializer_lists: true # Prefer putting asserts in initializer list.
     prefer_asserts_with_message: true # Prefer asserts with message.
     prefer_const_constructors: true # Prefer const with constant constructors.
     prefer_const_constructors_in_immutables: true # Prefer declaring const constructors on @immutable classes.
-    prefer_const_declarations: true # Prefer const over final for declarations.
-    prefer_const_literals_to_create_immutables: true # Prefer const literals as parameters of constructors on @immutable classes.
     prefer_contains: true # Use contains for List and String instances.
+    prefer_single_quotes: false  # Only use double quotes for strings containing single quotes.
     prefer_double_quotes: false # Prefer double quotes where they won't require escape sequences.
-    prefer_single_quotes: true  # Only use double quotes for strings containing single quotes.
     prefer_equal_for_default_values: true # Use = to separate a named parameter from its default value.
     prefer_final_fields: true # Private field could be final.
     prefer_final_in_for_each: true # Prefer final in for-each loop variable if reference is not reassigned.
     prefer_final_locals: true # Prefer final for variable declarations if they are not reassigned.
-    prefer_final_parameters: false # Prefer final for parameter declarations if they are not reassigned.
-    prefer_function_declarations_over_variables: true # Use a function declaration to bind a function to a name.
-    prefer_generic_function_type_aliases: true # Prefer generic function type aliases.
     prefer_if_null_operators: true # Prefer using if null operators.
-    prefer_initializing_formals: true # Use initializing formals when possible.
     prefer_interpolation_to_compose_strings: true # Use interpolation to compose strings and values.
     prefer_is_empty: true # Use isEmpty for Iterables and Maps.
     prefer_is_not_empty: true # Use isNotEmpty for Iterables and Maps.
     prefer_iterable_whereType: true # Prefer to use whereType on iterable.
-    prefer_mixin: true # Prefer using mixins.
-    prefer_null_aware_method_calls: true # Prefer null aware method calls.
     prefer_null_aware_operators: true # Prefer using null aware operators.
+    prefer_null_aware_method_calls: true # Prefer null aware method calls.
     prefer_spread_collections: true # Use spread collections when possible.
     prefer_typing_uninitialized_variables: true # Prefer typing uninitialized variables and fields.
-    provide_deprecation_message: true # Provide a deprecation message, via @Deprecated("message").
     public_member_api_docs: false # Document all public members.
-    recursive_getters: true # Property getter recursively returns itself.
     require_trailing_commas: false # Use trailing commas for all function calls and declarations.
     sized_box_for_whitespace: false # SizedBox for whitespace.
     slash_for_doc_comments: true # Prefer using /// for doc comments.
@@ -121,12 +89,10 @@ linter:
     sort_unnamed_constructors_first: true # Sort unnamed constructor declarations first.
     tighten_type_of_initializing_formals: true # Tighten type of initializing formal.
     type_annotate_public_apis: false # Type annotate public APIs.
-    type_init_formals: true # Don't type annotate initializing formals.
     unawaited_futures: true # Future results in async function bodies must be awaited or marked unawaited using package:pedantic.
     unnecessary_await_in_return: true # Unnecessary await keyword in return.
     unnecessary_brace_in_string_interps: true # Avoid using braces in interpolation when not needed.
     unnecessary_constructor_name: true # Unnecessary .new constructor name.
-    unnecessary_const: true # Avoid const keyword.
     unnecessary_new: true # Unnecessary new keyword.
     unnecessary_null_aware_assignments: true # Avoid null in null-aware assignment.
     unnecessary_null_in_if_null_operators: true # Avoid using null in if null operators.
@@ -138,18 +104,7 @@ linter:
     unnecessary_this: true # Don't access members with this unless avoiding shadowing.
     use_full_hex_values_for_flutter_colors: true # Prefer an 8-digit hexadecimal integer(0xFFFFFFFF) to instantiate Color.
     use_if_null_to_convert_nulls_to_bools: true # Use if-null operators to convert nulls to bools.
-    use_is_even_rather_than_modulo: true # Prefer intValue.isOdd/isEven instead of checking the result of % 2.
-    use_named_constants: true # Use predefined named constants.
     use_raw_strings: true # Use raw string to avoid escapes.
-    use_rethrow_when_possible: true # se rethrow to rethrow a caught exception
-    use_setters_to_change_properties: true # Use a setter for operations that conceptually change a property.
-    use_string_buffers: true # Use string buffers to compose strings.
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
-
-analyzer:
-  exclude:
-    - lib/client.dart
-    - lib/server/*.g.dart
-    - test/_data/**
