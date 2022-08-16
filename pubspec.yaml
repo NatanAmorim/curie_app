@@ -1,6 +1,6 @@
 name: curie
 description: A app created to be my template.
-version: 2022.0.1-pre-alpha
+version: 2022.0.2-pre-alpha
 
 # Prevent accidental publishing to pub.dev.
 publish_to: 'none'
@@ -55,7 +55,7 @@ msix_config:
   # identity_name: 48434MySoftware.MyFlutterApp
   # publisher: CN=BF212345-5644-46DF-8668-012044C1B138
   logo_path: assets\images\flutter_logo.png
-  msix_version: 2022.0.1
+  msix_version: 2022.0.2
   # store: true
   # https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations
   capabilities: "internetClient"

@@ -23,12 +23,12 @@ class SettingsScreen extends StatelessWidget {
           children: <TextSpan>[
             TextSpan(
                 style: textStyle,
-                text: "Flutter is Google's UI toolkit for building beautiful, "
-                    'natively compiled applications for mobile, web, and desktop '
-                    'from a single codebase. Learn more about Flutter at '),
+                text:
+                    '(Pre-Alpha) An open-source app for managing small schools'
+                    ', made with Flutter.\n'),
             TextSpan(
                 style: textStyle.copyWith(color: theme.colorScheme.primary),
-                text: 'https://flutter.dev'),
+                text: 'https://https://github.com/NatanAmorim/curie'),
             TextSpan(style: textStyle, text: '.'),
           ],
         ),
@@ -105,13 +105,105 @@ class SettingsScreen extends StatelessWidget {
                           ],
                         ),
                         const Divider(),
+                        ListTile(
+                          leading: const Icon(Icons.info),
+                          title: const Text('App theme'),
+                          onTap: () => showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              title: const Text('Choose your theme'),
+                              content: Scrollbar(
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    children: [
+                                      const Divider(),
+                                      RadioListTile<ThemeMode>(
+                                        title: const Text('System Theme'),
+                                        value: ThemeMode.system,
+                                        groupValue: controller.themeMode,
+                                        onChanged: controller.updateThemeMode,
+                                      ),
+                                      RadioListTile<ThemeMode>(
+                                        title: const Text('Light Theme'),
+                                        value: ThemeMode.light,
+                                        groupValue: controller.themeMode,
+                                        onChanged: controller.updateThemeMode,
+                                      ),
+                                      RadioListTile<ThemeMode>(
+                                        title: const Text('Dark Theme'),
+                                        value: ThemeMode.dark,
+                                        groupValue: controller.themeMode,
+                                        onChanged: controller.updateThemeMode,
+                                      ),
+                                      const Divider(),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () => Navigator.of(context).pop(),
+                                  child: const Text('CANCEL'),
+                                ),
+                                TextButton(
+                                  onPressed: () {},
+                                  child: const Text('OK'),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        const Divider(),
+                        ListTile(
+                          leading: const Icon(Icons.language),
+                          title: const Text('Language'),
+                          onTap: () => showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              title: const Text('Choose your language'),
+                              content: Scrollbar(
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    children: [
+                                      const Divider(),
+                                      RadioListTile<Locale>(
+                                        title: const Text('English 🇺🇸'),
+                                        value: const Locale('en', ''),
+                                        groupValue: controller.locale,
+                                        onChanged: controller.updateLocale,
+                                      ),
+                                      RadioListTile<Locale>(
+                                        title: const Text('Português 🇧🇷'),
+                                        value: const Locale('pt', ''),
+                                        groupValue: controller.locale,
+                                        onChanged: controller.updateLocale,
+                                      ),
+                                      const Divider(),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () => Navigator.of(context).pop(),
+                                  child: const Text('CANCEL'),
+                                ),
+                                TextButton(
+                                  onPressed: () {},
+                                  child: const Text('OK'),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        const Divider(),
                         AboutListTile(
-                          icon: const Icon(Icons.info),
+                          icon: const Icon(Icons.help),
                           applicationIcon: const FlutterLogo(),
-                          applicationName: 'Show About Example',
-                          applicationVersion: 'August 2019',
+                          applicationName: 'Curie',
+                          applicationVersion: 'Pre-Alpha',
                           applicationLegalese:
-                              '\u{a9} 2014 The Flutter Authors',
+                              '\u{a9} 2022 Natan Amorim S. G. de Moraes',
                           aboutBoxChildren: aboutBoxChildren,
                         ),
                       ],
