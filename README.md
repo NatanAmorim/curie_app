@@ -3,18 +3,18 @@
 ![license](https://img.shields.io/badge/license-MIT-green.svg)
 ![Desktop](https://img.shields.io/badge/Desktop-v2021.1.0%20PRE%20ALPHA-blue)
 
-## About
-
-- Open Source desktop App for small schools management made with Flutter.
-- Licensed under [MIT License](https://opensource.org/licenses/MIT)
-
-> It's FREE -> "Free as in freedom"
-
 ## Concept
 
 <h1 align="center">
     <img alt="Currie Concept" title="Currie Concept" src=".github/curie_desktop_figma.png" />
 </h1>
+
+## About
+
+- A app created to be my template.
+- Licensed under [MIT License](https://opensource.org/licenses/MIT)
+
+> It's FREE -> "Free as in freedom"
 
 ## Pull Request
 

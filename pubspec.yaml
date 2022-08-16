@@ -1,0 +1,61 @@
+name: curie
+description: A app created to be my template.
+version: 2022.0.1-pre-alpha
+
+# Prevent accidental publishing to pub.dev.
+publish_to: 'none'
+
+environment:
+  sdk: ">=2.17.5 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  http: ^0.13.3
+  intl: ^0.17.0
+  shared_preferences: ^2.0.15
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  msix: ^3.3.1
+  flutter_lints: ^2.0.0
+  flutter_native_splash: ^2.2.4
+
+flutter:
+  uses-material-design: true
+
+  # Enable generation of localized Strings from arb files.
+  generate: true
+
+  assets:
+    # Add assets from the images directory to the application.
+    - assets/images/
+
+flutter_native_splash:
+  android: true
+  ios: true
+  web: true
+
+  color: "#000000"
+  image: assets/images/flutter_logo.png
+  android_12:
+    image: assets/images/flutter_logo.png
+    icon_background_color: "#ffffff"
+    image_dark: assets/images/flutter_logo.png
+    icon_background_color_dark: "#000000"
+
+msix_config:
+  display_name: Curie Desktop
+  publisher_display_name: PLACEHOLDER
+  # identity_name: 48434MySoftware.MyFlutterApp
+  # publisher: CN=BF212345-5644-46DF-8668-012044C1B138
+  logo_path: assets\images\flutter_logo.png
+  msix_version: 2022.0.1
+  # store: true
+  # https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations
+  capabilities: "internetClient"
