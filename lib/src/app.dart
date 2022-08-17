@@ -1,26 +1,23 @@
 import 'package:curie/src/controllers/settings_controller.dart';
 import 'package:curie/src/routes.dart';
-import 'package:curie/src/views/error/error_screen.dart';
 import 'package:curie/src/views/navigation_test/navigation_test_screen.dart';
-import 'package:curie/src/views/settings/settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 /// The Widget that configures your application.
 class MyApp extends StatelessWidget {
-  MyApp({
+  const MyApp({
     Key? key,
     required this.settingsController,
+    required this.routes,
   }) : super(key: key);
 
   final SettingsController settingsController;
-  late Routes routes;
+  final Routes routes;
 
   @override
   Widget build(BuildContext context) {
-    routes = Routes(settingsController: settingsController);
-
     // Glue the SettingsController to the MaterialApp.
     //
     // The AnimatedBuilder Widget listens to the SettingsController for changes.
@@ -65,10 +62,9 @@ class MyApp extends StatelessWidget {
           // background.
           restorationScopeId: 'app',
 
-          initialRoute: NavigationTestScreen.routeName,
+          home: const NavigationTestScreen(),
           // Define a function to handle named routes in order to support
           // Flutter web url navigation and deep linking.
-          // TODO: put this logic in a separated file called router.dart
           onGenerateRoute: routes.onGenerateRoute,
         );
       },

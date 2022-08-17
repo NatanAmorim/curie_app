@@ -1,5 +1,6 @@
 import 'package:curie/src/app.dart';
 import 'package:curie/src/controllers/settings_controller.dart';
+import 'package:curie/src/routes.dart';
 import 'package:curie/src/services/settings_service.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,7 @@ void main() async {
   runApp(
     MyApp(
       settingsController: settingsController,
+      routes: Routes(settingsController: settingsController),
     ),
   );
 }
