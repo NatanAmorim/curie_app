@@ -6,7 +6,7 @@ All notable changes in this project will be documented in this file.
 
 - Fixed warnings about @imutable in MyApp.
 - Fixed warnings about Incorrect use of ParentDataWidget in cardTemplate.
-- Removed back button in the initial screen, usinga home widget in the view.
+- Removed back button in the initial screen, using a home widget in the view.
 
 ## Curie v2022.0.3-Pre-Alpha (August 17, 2022)
 
