@@ -2,6 +2,13 @@
 
 All notable changes in this project will be documented in this file.
 
+## Curie v2022.0.3-Pre-Alpha (August 17, 2022)
+
+- The settingsPageView now supports differents languagues.
+- Created a template for a Material Card with max width of 990.
+- Removed "sample_feature" from skeleton example.
+- Routes are now working on a separated file "routes.dart".
+
 ## Curie v2022.0.2-Pre-Alpha (August 16, 2022)
 
 - Testing with different ways of setting user app preferences.

@@ -1,4 +1,5 @@
 import 'package:curie/src/templates/widgets/appbar_template.dart';
+import 'package:curie/src/templates/widgets/card_template.dart';
 import 'package:flutter/material.dart';
 
 class NavigationTestScreen extends StatefulWidget {
@@ -17,7 +18,10 @@ class _NavigationTestScreenState extends State<NavigationTestScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: appBarTemplate(context: context, title: 'title'),
+      appBar: appBarTemplate(
+        context: context,
+        title: 'title',
+      ),
       body: Row(
         children: [
           NavigationRail(
@@ -71,27 +75,9 @@ class FirstWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
-        width: 1152,
-        height: 128,
-        child: Card(
-          elevation: 2,
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                Text(
-                  'This is the first Widget',
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-                Text(
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-                  style: Theme.of(context).textTheme.bodyText1,
-                ),
-              ],
-            ),
-          ),
-        ),
+      child: Text(
+        'This is the first Widget',
+        style: Theme.of(context).textTheme.headline2,
       ),
     );
   }
@@ -102,8 +88,11 @@ class SecondWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('This is the second Widget'),
+    return Center(
+      child: Text(
+        'This is the second Widget',
+        style: Theme.of(context).textTheme.headline2,
+      ),
     );
   }
 }
@@ -113,8 +102,11 @@ class ThirdWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('This is the third Widget'),
+    return Center(
+      child: Text(
+        'This is the third Widget',
+        style: Theme.of(context).textTheme.headline2,
+      ),
     );
   }
 }

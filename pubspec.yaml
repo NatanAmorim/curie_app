@@ -1,6 +1,6 @@
 name: curie
-description: A app created to be my template.
-version: 2022.0.2-pre-alpha
+description: (Pre-Alpha) Open-source app created to be my template and feature playground, made with Flutter.
+version: 2022.0.3-pre-alpha
 
 # Prevent accidental publishing to pub.dev.
 publish_to: 'none'
@@ -50,12 +50,12 @@ flutter_native_splash:
     icon_background_color_dark: "#000000"
 
 msix_config:
-  display_name: Curie Desktop
+  display_name: Curie
   publisher_display_name: PLACEHOLDER
   # identity_name: 48434MySoftware.MyFlutterApp
   # publisher: CN=BF212345-5644-46DF-8668-012044C1B138
   logo_path: assets\images\flutter_logo.png
-  msix_version: 2022.0.2
+  msix_version: 2022.0.3
   # store: true
   # https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations
   capabilities: "internetClient"

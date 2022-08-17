@@ -1,6 +1,6 @@
 import 'package:curie/src/controllers/settings_controller.dart';
-import 'package:curie/src/sample_feature/sample_item_details_view.dart';
-import 'package:curie/src/sample_feature/sample_item_list_view.dart';
+import 'package:curie/src/routes.dart';
+import 'package:curie/src/views/error/error_screen.dart';
 import 'package:curie/src/views/navigation_test/navigation_test_screen.dart';
 import 'package:curie/src/views/settings/settings_screen.dart';
 import 'package:flutter/material.dart';
@@ -9,15 +9,18 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 /// The Widget that configures your application.
 class MyApp extends StatelessWidget {
-  const MyApp({
+  MyApp({
     Key? key,
     required this.settingsController,
   }) : super(key: key);
 
   final SettingsController settingsController;
+  late Routes routes;
 
   @override
   Widget build(BuildContext context) {
+    routes = Routes(settingsController: settingsController);
+
     // Glue the SettingsController to the MaterialApp.
     //
     // The AnimatedBuilder Widget listens to the SettingsController for changes.
@@ -26,12 +29,6 @@ class MyApp extends StatelessWidget {
       animation: settingsController,
       builder: (BuildContext context, Widget? child) {
         return MaterialApp(
-          // Providing a restorationScopeId allows the Navigator built by the
-          // MaterialApp to restore the navigation stack when a user leaves and
-          // returns to the app after it has been killed while running in the
-          // background.
-          restorationScopeId: 'app',
-
           // Provide the generated AppLocalizations to the MaterialApp. This
           // allows descendant Widgets to display the correct translations
           // depending on the user's locale.
@@ -62,28 +59,17 @@ class MyApp extends StatelessWidget {
           darkTheme: ThemeData.dark(),
           themeMode: settingsController.themeMode,
 
-          initialRoute: SampleItemListView.routeName,
+          // Providing a restorationScopeId allows the Navigator built by the
+          // MaterialApp to restore the navigation stack when a user leaves and
+          // returns to the app after it has been killed while running in the
+          // background.
+          restorationScopeId: 'app',
+
+          initialRoute: NavigationTestScreen.routeName,
           // Define a function to handle named routes in order to support
           // Flutter web url navigation and deep linking.
-          onGenerateRoute: (RouteSettings routeSettings) {
-            return MaterialPageRoute<void>(
-              settings: routeSettings,
-              builder: (BuildContext context) {
-                switch (routeSettings.name) {
-                  case SettingsScreen.routeName:
-                    return SettingsScreen(controller: settingsController);
-                  case SampleItemDetailsView.routeName:
-                    return const SampleItemDetailsView();
-                  case SampleItemListView.routeName:
-                    return const SampleItemListView();
-                  case NavigationTestScreen.routeName:
-                    return const NavigationTestScreen();
-                  default:
-                    return const SampleItemListView();
-                }
-              },
-            );
-          },
+          // TODO: put this logic in a separated file called router.dart
+          onGenerateRoute: routes.onGenerateRoute,
         );
       },
     );
