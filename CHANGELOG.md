@@ -2,6 +2,10 @@
 
 All notable changes in this project will be documented in this file.
 
+## Curie v2022.0.5-Pre-Alpha (August 18, 2022)
+
+- SettingsScreen it's finished and now works like intended.
+
 ## Curie v2022.0.4-Pre-Alpha (August 17, 2022)
 
 - Fixed warnings about @imutable in MyApp.

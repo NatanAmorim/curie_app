@@ -1,5 +1,4 @@
 import 'package:curie/src/templates/widgets/appbar_template.dart';
-import 'package:curie/src/templates/widgets/card_template.dart';
 import 'package:flutter/material.dart';
 
 class NavigationTestScreen extends StatefulWidget {
