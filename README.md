@@ -1,6 +1,6 @@
 # Curie (Pre-Alpha)
 
-![license](https://img.shields.io/badge/license-MIT-green.svg)
+![license](https://img.shields.io/badge/license-GPL--2.0-green.svg)
 ![Desktop](https://img.shields.io/badge/Desktop-v2021.1.0%20PRE%20ALPHA-blue)
 
 ## Concept
@@ -12,7 +12,7 @@
 ## About
 
 - A app created to be my template.
-- Licensed under [MIT License](https://opensource.org/licenses/MIT)
+- Licensed under [GPL-2.0 license](https://opensource.org/licenses/GPL-2.0)
 
 > It's FREE -> "Free as in freedom"
 
