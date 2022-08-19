@@ -47,13 +47,22 @@ class SettingsScreen extends StatelessWidget {
             Flexible(
               child: ConstrainedBox(
                 constraints: const BoxConstraints(
-                  maxWidth: 770,
+                  maxWidth: 786, // 770 for the content and 16 for the padding
                 ),
                 child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   width: double.infinity,
                   child: Column(
                     children: [
                       const SizedBox(height: 25),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          AppLocalizations.of(context)!.general,
+                          style: Theme.of(context).textTheme.headline5,
+                        ),
+                      ),
+                      const SizedBox(height: 15),
                       Card(
                         child: ListView(
                           shrinkWrap: true,

@@ -11,20 +11,35 @@ class NavigationTestScreen extends StatefulWidget {
 }
 
 class _NavigationTestScreenState extends State<NavigationTestScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      key: _scaffoldKey,
       appBar: appBarTemplate(
         context: context,
-        title: 'title',
+        title: 'Title',
+      ),
+      endDrawer: const Drawer(
+        backgroundColor: Colors.green,
+        child: Center(child: Text('This is a side panel')),
+      ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Filters',
+        onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+        child: const Icon(Icons.filter_alt),
       ),
       body: Row(
         children: [
           NavigationRail(
-            elevation: 8,
+            useIndicator: false,
+            selectedIconTheme:
+                IconThemeData(color: Theme.of(context).colorScheme.secondary),
+            selectedLabelTextStyle:
+                TextStyle(color: Theme.of(context).colorScheme.secondary),
             selectedIndex: _selectedIndex,
             onDestinationSelected: (index) {
               setState(() {

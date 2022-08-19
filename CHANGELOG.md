@@ -2,6 +2,12 @@
 
 All notable changes in this project will be documented in this file.
 
+## Curie v2022.0.6-Pre-Alpha (August 19, 2022)
+
+- Custom themes are now being used.
+- Some minor improvements in the SettingsScreen.
+- Added side panel activated with FAB to use for "SortBy" & "FilterBy".
+
 ## Curie v2022.0.5-Pre-Alpha (August 18, 2022)
 
 - SettingsScreen it's finished and now works like intended.

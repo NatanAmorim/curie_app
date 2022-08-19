@@ -2,15 +2,15 @@
   "appTitle": "Curie",
   "appDescription": "(Pre-Alpha) Open-source app criado para ser meu template e playground de recursos, feito com Flutter.",
   "appTheme": "Tema do aplicativo",
-  "selectTheme" : "Selecione o tema",
+  "selectTheme": "Selecione o tema",
   "systemTheme": "Tema do sistema",
   "lightTheme": "Tema claro",
   "darkTheme": "Tema escuro",
   "appLanguage": "Idioma do aplicativo",
-  "selectLanguage" : "Selecione o idioma",
+  "selectLanguage": "Selecione o idioma",
   "aboutCurie": "Sobre Curie App",
+  "general": "Geral",
   "settings": "Configurações",
   "cancel": "CANCELAR",
-  "ok": "OK",
-  "sampleItem": "Item de amostra"
+  "ok": "OK"
 }

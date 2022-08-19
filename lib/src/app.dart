@@ -1,5 +1,6 @@
 import 'package:curie/src/controllers/settings_controller.dart';
 import 'package:curie/src/routes.dart';
+import 'package:curie/src/themes.dart';
 import 'package:curie/src/views/navigation_test/navigation_test_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -52,8 +53,8 @@ class MyApp extends StatelessWidget {
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.
-          theme: ThemeData(),
-          darkTheme: ThemeData.dark(),
+          theme: lightTheme,
+          darkTheme: darkTheme,
           themeMode: settingsController.themeMode,
 
           // Providing a restorationScopeId allows the Navigator built by the

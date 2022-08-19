@@ -4,19 +4,21 @@ ThemeData lightTheme = ThemeData(
   useMaterial3: true,
   textTheme: ThemeData.light().textTheme.copyWith(
         button: const TextStyle(
-          fontSize: 28.0,
           fontWeight: FontWeight.w500,
           color: Colors.white,
         ),
       ),
+  appBarTheme: const AppBarTheme(
+    backgroundColor: Color(0xFF3f50b5),
+  ),
   scrollbarTheme: ScrollbarThemeData(
-    thumbColor: MaterialStateProperty.all(Colors.blueAccent),
+    thumbVisibility: MaterialStateProperty.all(true),
+    thumbColor: MaterialStateProperty.all(Colors.grey),
     thickness: MaterialStateProperty.all(10),
     radius: Radius.zero,
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      primary: Colors.lightBlue,
       padding: EdgeInsets.zero,
       textStyle: const TextStyle(color: Colors.white),
       shape: RoundedRectangleBorder(
@@ -25,31 +27,34 @@ ThemeData lightTheme = ThemeData(
     ),
   ),
   floatingActionButtonTheme: const FloatingActionButtonThemeData(
-    backgroundColor: Colors.green,
-    sizeConstraints: BoxConstraints.tightFor(height: 80),
+    backgroundColor: Colors.pinkAccent,
   ),
   scaffoldBackgroundColor: const Color(0xFFE9EBEE),
+  cardTheme: const CardTheme(color: Colors.white),
   colorScheme: ColorScheme.fromSeed(
-    seedColor: const Color(0xFFE91E63),
+    seedColor: Colors.indigo,
+    secondary: Colors.pinkAccent,
   ),
+  toggleableActiveColor: Colors.orangeAccent,
+  unselectedWidgetColor: Colors.grey,
 );
 
 ThemeData darkTheme = ThemeData(
   useMaterial3: true,
   textTheme: ThemeData.dark().textTheme.copyWith(
         button: const TextStyle(
-          fontSize: 28.0,
           fontWeight: FontWeight.w500,
           color: Colors.black,
         ),
       ),
   scrollbarTheme: ScrollbarThemeData(
+    thumbVisibility: MaterialStateProperty.all(true),
+    thumbColor: MaterialStateProperty.all(Colors.grey),
     thickness: MaterialStateProperty.all(10),
     radius: Radius.zero,
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      primary: Colors.lightBlue,
       padding: EdgeInsets.zero,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30.0),
@@ -57,15 +62,16 @@ ThemeData darkTheme = ThemeData(
     ),
   ),
   floatingActionButtonTheme: const FloatingActionButtonThemeData(
-    backgroundColor: Colors.green,
-    sizeConstraints: BoxConstraints.tightFor(height: 80),
+    backgroundColor: Colors.pinkAccent,
   ),
   colorScheme: ColorScheme.fromSeed(
-    seedColor: const Color(0xFFF278A1),
-    primary: const Color(0xFF3469E9),
+    seedColor: Colors.indigo,
+    secondary: Colors.pinkAccent,
     error: const Color(
       0xFFCF6679,
     ),
     brightness: Brightness.dark,
   ).copyWith(),
+  toggleableActiveColor: Colors.orangeAccent,
+  unselectedWidgetColor: Colors.grey,
 );

@@ -12,6 +12,11 @@ class _NavigationRailTemplateState extends State<NavigationRailTemplate> {
   Widget build(BuildContext context) {
     int _selectedIndex = 0;
     return NavigationRail(
+      useIndicator: false,
+      selectedIconTheme:
+          IconThemeData(color: Theme.of(context).colorScheme.secondary),
+      selectedLabelTextStyle:
+          TextStyle(color: Theme.of(context).colorScheme.secondary),
       selectedIndex: _selectedIndex,
       onDestinationSelected: (int index) {
         setState(() {

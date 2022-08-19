@@ -1,7 +1,6 @@
 # Curie (Pre-Alpha)
 
 ![license](https://img.shields.io/badge/license-GPL--2.0-green.svg)
-![Desktop](https://img.shields.io/badge/Desktop-v2021.1.0%20PRE%20ALPHA-blue)
 
 ## Concept
 

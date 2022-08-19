@@ -9,8 +9,8 @@
   "appLanguage": "App language",
   "selectLanguage": "Select the language",
   "aboutCurie": "About Curie App",
+  "general": "General",
   "settings": "Settings",
   "cancel": "CANCEL",
-  "ok": "OK",
-  "sampleItem": "Sample Item"
+  "ok": "OK"
 }
