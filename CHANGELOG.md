@@ -2,6 +2,10 @@
 
 All notable changes in this project will be documented in this file.
 
+## Curie v2022.0.7-Pre-Alpha (August 22, 2022)
+
+- Updated theme.
+
 ## Curie v2022.0.6-Pre-Alpha (August 19, 2022)
 
 - Custom themes are now being used.

@@ -9,7 +9,7 @@ ThemeData lightTheme = ThemeData(
         ),
       ),
   appBarTheme: const AppBarTheme(
-    backgroundColor: Color(0xFF3f50b5),
+    backgroundColor: Colors.indigo,
   ),
   scrollbarTheme: ScrollbarThemeData(
     thumbVisibility: MaterialStateProperty.all(true),
@@ -27,13 +27,13 @@ ThemeData lightTheme = ThemeData(
     ),
   ),
   floatingActionButtonTheme: const FloatingActionButtonThemeData(
-    backgroundColor: Colors.pinkAccent,
+    backgroundColor: Colors.indigoAccent,
   ),
   scaffoldBackgroundColor: const Color(0xFFE9EBEE),
   cardTheme: const CardTheme(color: Colors.white),
   colorScheme: ColorScheme.fromSeed(
     seedColor: Colors.indigo,
-    secondary: Colors.pinkAccent,
+    secondary: Colors.indigoAccent,
   ),
   toggleableActiveColor: Colors.orangeAccent,
   unselectedWidgetColor: Colors.grey,
@@ -61,12 +61,9 @@ ThemeData darkTheme = ThemeData(
       ),
     ),
   ),
-  floatingActionButtonTheme: const FloatingActionButtonThemeData(
-    backgroundColor: Colors.pinkAccent,
-  ),
   colorScheme: ColorScheme.fromSeed(
     seedColor: Colors.indigo,
-    secondary: Colors.pinkAccent,
+    secondary: Colors.white,
     error: const Color(
       0xFFCF6679,
     ),
