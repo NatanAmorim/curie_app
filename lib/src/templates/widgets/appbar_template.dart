@@ -5,6 +5,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 AppBar appBarTemplate({
   required BuildContext context,
   required String title,
+  Widget? leading,
 }) {
   return AppBar(
     title: Text(
@@ -14,6 +15,7 @@ AppBar appBarTemplate({
         fontWeight: FontWeight.w400,
       ),
     ),
+    leading: leading,
     actions: <Widget>[
       IconButton(
         icon: const Icon(

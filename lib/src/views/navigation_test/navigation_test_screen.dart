@@ -13,6 +13,7 @@ class NavigationTestScreen extends StatefulWidget {
 class _NavigationTestScreenState extends State<NavigationTestScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _selectedIndex = 0;
+  bool isExtended = false;
 
   @override
   Widget build(BuildContext context) {
@@ -20,22 +21,21 @@ class _NavigationTestScreenState extends State<NavigationTestScreen> {
         child: Scaffold(
       key: _scaffoldKey,
       appBar: appBarTemplate(
-        context: context,
-        title: 'Title',
-      ),
+          context: context,
+          title: 'Title',
+          leading: IconButton(
+            onPressed: () => setState(() => isExtended = !isExtended),
+            icon: const Icon(Icons.menu),
+          )),
       endDrawer: const Drawer(
         backgroundColor: Colors.green,
         child: Center(child: Text('This is a side panel')),
       ),
-      floatingActionButton: FloatingActionButton(
-        tooltip: 'Filters',
-        onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
-        child: const Icon(Icons.filter_alt),
-      ),
       body: Row(
         children: [
           NavigationRail(
-            useIndicator: false,
+            extended: isExtended,
+            useIndicator: true,
             selectedIconTheme:
                 IconThemeData(color: Theme.of(context).colorScheme.secondary),
             selectedLabelTextStyle:
@@ -46,22 +46,39 @@ class _NavigationTestScreenState extends State<NavigationTestScreen> {
                 _selectedIndex = index;
               });
             },
-            labelType: NavigationRailLabelType.all,
-            destinations: const [
+            labelType: isExtended
+                ? NavigationRailLabelType.none
+                : NavigationRailLabelType.selected,
+            leading: isExtended
+                ? FloatingActionButton.extended(
+                    tooltip: 'Filters',
+                    onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+                    icon: const Icon(Icons.filter_alt),
+                    label: const Text('Filters'),
+                  )
+                : FloatingActionButton(
+                    tooltip: 'Filters',
+                    onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+                    child: const Icon(Icons.filter_alt),
+                  ),
+            destinations: [
               NavigationRailDestination(
-                icon: Icon(Icons.favorite_border),
-                selectedIcon: Icon(Icons.favorite),
-                label: Text('First'),
+                padding: EdgeInsets.only(top: isExtended ? 0 : 12),
+                icon: const Icon(Icons.favorite_border),
+                selectedIcon: const Icon(Icons.favorite),
+                label: const Text('First'),
               ),
               NavigationRailDestination(
-                icon: Icon(Icons.bookmark_border),
-                selectedIcon: Icon(Icons.book),
-                label: Text('Second'),
+                padding: EdgeInsets.only(top: isExtended ? 0 : 12),
+                icon: const Icon(Icons.bookmark_border),
+                selectedIcon: const Icon(Icons.book),
+                label: const Text('Second'),
               ),
               NavigationRailDestination(
-                icon: Icon(Icons.star_border),
-                selectedIcon: Icon(Icons.star),
-                label: Text('Third'),
+                padding: EdgeInsets.only(top: isExtended ? 0 : 12),
+                icon: const Icon(Icons.star_border),
+                selectedIcon: const Icon(Icons.star),
+                label: const Text('Third'),
               ),
             ],
           ),

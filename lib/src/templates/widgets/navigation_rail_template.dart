@@ -26,16 +26,19 @@ class _NavigationRailTemplateState extends State<NavigationRailTemplate> {
       labelType: NavigationRailLabelType.all,
       destinations: const <NavigationRailDestination>[
         NavigationRailDestination(
+          padding: EdgeInsets.only(top: 12),
           icon: Icon(Icons.favorite_border),
           selectedIcon: Icon(Icons.favorite),
           label: Text('First'),
         ),
         NavigationRailDestination(
+          padding: EdgeInsets.only(top: 12),
           icon: Icon(Icons.bookmark_border),
           selectedIcon: Icon(Icons.book),
           label: Text('Second'),
         ),
         NavigationRailDestination(
+          padding: EdgeInsets.only(top: 12),
           icon: Icon(Icons.star_border),
           selectedIcon: Icon(Icons.star),
           label: Text('Third'),

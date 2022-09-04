@@ -11,7 +11,7 @@ description: (Pre-Alpha) Open-source app created to be my template and feature p
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 2022.0.8-pre-alpha
+version: 2022.0.9-pre-alpha
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -82,7 +82,7 @@ msix_config:
   # identity_name: 48434MySoftware.MyFlutterApp
   # publisher: CN=BF212345-5644-46DF-8668-012044C1B138
   logo_path: assets\images\flutter_logo.png
-  msix_version: 2022.0.8
+  msix_version: 2022.0.9
   # store: true
   # https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations
   capabilities: "internetClient"
