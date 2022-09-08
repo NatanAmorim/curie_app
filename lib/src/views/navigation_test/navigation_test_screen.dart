@@ -10,10 +10,27 @@ class NavigationTestScreen extends StatefulWidget {
   State<NavigationTestScreen> createState() => _NavigationTestScreenState();
 }
 
-class _NavigationTestScreenState extends State<NavigationTestScreen> {
+class _NavigationTestScreenState extends State<NavigationTestScreen>
+    with TickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _selectedIndex = 0;
   bool isExtended = false;
+  late AnimationController _animationController;
+
+  @override
+  void initState() {
+    _animationController = AnimationController(
+      duration: const Duration(milliseconds: 150),
+      vsync: this,
+    );
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +38,26 @@ class _NavigationTestScreenState extends State<NavigationTestScreen> {
         child: Scaffold(
       key: _scaffoldKey,
       appBar: appBarTemplate(
-          context: context,
-          title: 'Title',
-          leading: IconButton(
-            onPressed: () => setState(() => isExtended = !isExtended),
-            icon: const Icon(Icons.menu),
-          )),
+        context: context,
+        title: 'Title',
+        leading: InkWell(
+          onTap: () {
+            setState(() => isExtended = !isExtended);
+            if (isExtended) {
+              _animationController.forward();
+            } else {
+              _animationController.reverse();
+            }
+          },
+          child: Center(
+            child: AnimatedIcon(
+              icon: AnimatedIcons.menu_close,
+              size: 28,
+              progress: _animationController,
+            ),
+          ),
+        ),
+      ),
       endDrawer: const Drawer(
         backgroundColor: Colors.green,
         child: Center(child: Text('This is a side panel')),
