@@ -12,7 +12,6 @@ ThemeData lightTheme = ThemeData(
     backgroundColor: Colors.indigo,
   ),
   scrollbarTheme: ScrollbarThemeData(
-    thumbVisibility: MaterialStateProperty.all(true),
     thumbColor: MaterialStateProperty.all(Colors.grey),
     thickness: MaterialStateProperty.all(10),
     radius: Radius.zero,
@@ -48,7 +47,6 @@ ThemeData darkTheme = ThemeData(
         ),
       ),
   scrollbarTheme: ScrollbarThemeData(
-    thumbVisibility: MaterialStateProperty.all(true),
     thumbColor: MaterialStateProperty.all(Colors.grey),
     thickness: MaterialStateProperty.all(10),
     radius: Radius.zero,
