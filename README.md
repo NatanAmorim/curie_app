@@ -15,12 +15,30 @@
 
 > It's FREE -> "Free as in freedom"
 
-## Pull Request
+### Versioning
+
+- This project implements an opinionated interpretation of [Calendar Versioning](https://calver.org/).
+
+```bash
+        + YEAR                                  + YEAR
+        |                                       |
+        |  + MONTH OF THE YEAR                  |  + DAY OF THE YEAR
+        |  |                                    |  |
+        |  |  + DAY                             |  |  + DAY
+        |  |  |                                 |  |  |
+        |  |  | + FIX ITERATION                 |  |  |   + RELEASE CANDIDATE ITERATION
+        |  |  | |                               |  |  |   |
+     2022.03.14+2                            2022.03.14-rc1
+
+     ^ RELEASE                             ^ RELEASE CANDIDATES
+```
+
+### Pull Request
 
 - Clearly describe what you aim to add or fix.
 - Try to minimize code changes and use existing style/functions.
 
-## Reporting Issues and Bugs
+### Reporting Issues and Bugs
 
 To better respond to issues please follow these general guidelines when explaining the problem.
 
