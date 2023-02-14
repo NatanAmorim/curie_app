@@ -10,7 +10,6 @@
 
 ## About
 
-- A app created to be my template.
 - Licensed under [GPL-2.0 license](https://opensource.org/licenses/GPL-2.0)
 
 > It's FREE -> "Free as in freedom"
@@ -20,17 +19,17 @@
 - This project implements an opinionated interpretation of [Calendar Versioning](https://calver.org/).
 
 ```bash
-        + YEAR                                  + YEAR
-        |                                       |
-        |  + MONTH OF THE YEAR                  |  + DAY OF THE YEAR
-        |  |                                    |  |
-        |  |  + DAY                             |  |  + DAY
-        |  |  |                                 |  |  |
-        |  |  | + FIX ITERATION                 |  |  |   + RELEASE CANDIDATE ITERATION
-        |  |  | |                               |  |  |   |
-     2022.03.14+2                            2022.03.14-rc1
+                                             + YEAR
+                                             |
+        + YEAR                               |  + MONTH OF THE YEAR
+        |                                    |  |
+        |  + MONTH OF THE YEAR               |  | + RELEASE ITERATION
+        |  |                                 |  | |
+        |  | + RELEASE ITERATION             |  | |   + RELEASE CANDIDATE ITERATION
+        |  | |                               |  | |   |
+     2022.03.2                            2022.03.3-rc1
 
-     ^ RELEASE                             ^ RELEASE CANDIDATES
+     ^ RELEASE                            ^ RELEASE CANDIDATES
 ```
 
 ### Pull Request
