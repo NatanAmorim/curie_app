@@ -55,7 +55,7 @@ linter:
     leading_newlines_in_multiline_strings: true # Start multiline strings with a newline.
     lines_longer_than_80_chars: false # Avoid lines longer than 80 characters.
     null_check_on_nullable_type_parameter: true # Don't use null check on a potentially nullable type parameter.
-    null_closurFes: true # Do not pass null as an argument where a closure is expected.
+    null_closures: true # Do not pass null as an argument where a closure is expected.
     only_throw_errors: true # Only throw instances of classes extending either Exception or Error.
     package_api_docs: false # Provide doc comments for all public APIs.
     parameter_assignments: true # Don't reassign references to parameters of functions or methods.

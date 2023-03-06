@@ -1,22 +1,23 @@
-import 'package:curie/src/controllers/settings_controller.dart';
+import 'package:curie/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// Displays the various settings that can be customized by the user.
 ///
 /// When a user changes a setting, the SettingsController is updated and
 /// Widgets that listen to the SettingsController are rebuilt.
-class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({Key? key, required this.controller}) : super(key: key);
+class SettingsView extends ConsumerWidget {
+  const SettingsView({
+    Key? key,
+  }) : super(key: key);
 
   static const routeName = '/settings';
 
-  final SettingsController controller;
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final ThemeData theme = Theme.of(context);
-    final TextStyle textStyle = theme.textTheme.bodyText2!;
+    final TextStyle textStyle = theme.textTheme.bodyMedium!;
     final List<Widget> aboutBoxChildren = <Widget>[
       const SizedBox(height: 24),
       RichText(
@@ -59,11 +60,16 @@ class SettingsScreen extends StatelessWidget {
                         alignment: Alignment.centerLeft,
                         child: Text(
                           AppLocalizations.of(context)!.general,
-                          style: Theme.of(context).textTheme.headline5,
+                          style: Theme.of(context).textTheme.headlineSmall,
                         ),
                       ),
                       const SizedBox(height: 15),
                       Card(
+                        // clipBehavior is necessary because, without it, the InkWell's animation
+                        // will extend beyond the rounded edges of the [Card] (see https://github.com/flutter/flutter/issues/109776)
+                        // This comes with a small performance cost, and you should not set [clipBehavior]
+                        // unless you need it.
+                        clipBehavior: Clip.hardEdge,
                         child: ListView(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
@@ -76,8 +82,9 @@ class SettingsScreen extends StatelessWidget {
                                 title: Text(
                                     AppLocalizations.of(context)!.appTheme),
                                 onTap: () {
-                                  final ThemeMode oldTheme =
-                                      controller.themeMode;
+                                  final ThemeMode oldTheme = ref.read(
+                                    settingsProvider.select((s) => s.themeMode),
+                                  );
 
                                   showDialog(
                                     barrierDismissible: false,
@@ -98,10 +105,12 @@ class SettingsScreen extends StatelessWidget {
                                                       .systemTheme,
                                                 ),
                                                 value: ThemeMode.system,
-                                                groupValue:
-                                                    controller.themeMode,
-                                                onChanged:
-                                                    controller.updateThemeMode,
+                                                groupValue: ref.watch(
+                                                    settingsProvider.select(
+                                                        (s) => s.themeMode)),
+                                                onChanged: ref
+                                                    .read(settingsProvider)
+                                                    .updateThemeMode,
                                               ),
                                               RadioListTile<ThemeMode>(
                                                 title: Text(
@@ -109,10 +118,12 @@ class SettingsScreen extends StatelessWidget {
                                                       .lightTheme,
                                                 ),
                                                 value: ThemeMode.light,
-                                                groupValue:
-                                                    controller.themeMode,
-                                                onChanged:
-                                                    controller.updateThemeMode,
+                                                groupValue: ref.watch(
+                                                    settingsProvider.select(
+                                                        (s) => s.themeMode)),
+                                                onChanged: ref
+                                                    .read(settingsProvider)
+                                                    .updateThemeMode,
                                               ),
                                               RadioListTile<ThemeMode>(
                                                 title: Text(
@@ -120,10 +131,13 @@ class SettingsScreen extends StatelessWidget {
                                                       .darkTheme,
                                                 ),
                                                 value: ThemeMode.dark,
-                                                groupValue:
-                                                    controller.themeMode,
-                                                onChanged:
-                                                    controller.updateThemeMode,
+                                                groupValue: ref.watch(
+                                                  settingsProvider.select(
+                                                      (s) => s.themeMode),
+                                                ),
+                                                onChanged: ref
+                                                    .read(settingsProvider)
+                                                    .updateThemeMode,
                                               ),
                                               const Divider(),
                                             ],
@@ -134,8 +148,12 @@ class SettingsScreen extends StatelessWidget {
                                         TextButton(
                                           onPressed: () {
                                             if (oldTheme !=
-                                                controller.themeMode) {
-                                              controller
+                                                ref.read(
+                                                  settingsProvider.select(
+                                                      (s) => s.themeMode),
+                                                )) {
+                                              ref
+                                                  .read(settingsProvider)
                                                   .updateThemeMode(oldTheme);
                                             }
 
@@ -165,7 +183,9 @@ class SettingsScreen extends StatelessWidget {
                                   AppLocalizations.of(context)!.appLanguage,
                                 ),
                                 onTap: () {
-                                  final Locale oldLocale = controller.locale;
+                                  final Locale oldLocale = ref.read(
+                                    settingsProvider.select((s) => s.locale),
+                                  );
 
                                   showDialog(
                                     barrierDismissible: false,
@@ -184,17 +204,25 @@ class SettingsScreen extends StatelessWidget {
                                                 title:
                                                     const Text('English 🇺🇸'),
                                                 value: const Locale('en', ''),
-                                                groupValue: controller.locale,
-                                                onChanged:
-                                                    controller.updateLocale,
+                                                groupValue: ref.watch(
+                                                  settingsProvider
+                                                      .select((s) => s.locale),
+                                                ),
+                                                onChanged: ref
+                                                    .read(settingsProvider)
+                                                    .updateLocale,
                                               ),
                                               RadioListTile<Locale>(
                                                 title: const Text(
                                                     'Português 🇧🇷'),
                                                 value: const Locale('pt', ''),
-                                                groupValue: controller.locale,
-                                                onChanged:
-                                                    controller.updateLocale,
+                                                groupValue: ref.watch(
+                                                  settingsProvider
+                                                      .select((s) => s.locale),
+                                                ),
+                                                onChanged: ref
+                                                    .read(settingsProvider)
+                                                    .updateLocale,
                                               ),
                                               const Divider(),
                                             ],
@@ -205,8 +233,12 @@ class SettingsScreen extends StatelessWidget {
                                         TextButton(
                                           onPressed: () {
                                             if (oldLocale !=
-                                                controller.locale) {
-                                              controller
+                                                ref.read(
+                                                  settingsProvider
+                                                      .select((s) => s.locale),
+                                                )) {
+                                              ref
+                                                  .read(settingsProvider)
                                                   .updateLocale(oldLocale);
                                             }
 

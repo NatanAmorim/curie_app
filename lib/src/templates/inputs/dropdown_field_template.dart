@@ -15,7 +15,7 @@ class DropdownFieldTemplate<T> extends StatefulWidget {
   final void Function(T?)? onChanged;
 
   @override
-  _DropdownFieldTemplateState createState() => _DropdownFieldTemplateState();
+  State<DropdownFieldTemplate> createState() => _DropdownFieldTemplateState();
 }
 
 class _DropdownFieldTemplateState<T> extends State<DropdownFieldTemplate> {
@@ -53,7 +53,7 @@ class _DropdownFieldTemplateState<T> extends State<DropdownFieldTemplate> {
         labelText: widget.fieldName,
       ),
       value: widget.selectedValue,
-      style: Theme.of(context).textTheme.bodyText1,
+      style: Theme.of(context).textTheme.bodyLarge,
       onChanged: widget.onChanged,
       items: widget.items as List<DropdownMenuItem<T>>?,
     );

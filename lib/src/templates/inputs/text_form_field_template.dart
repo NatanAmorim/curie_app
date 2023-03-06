@@ -44,7 +44,7 @@ class TextFormFieldTemplate extends StatefulWidget {
   final void Function(String)? onChanged;
 
   @override
-  _TextFormFieldTemplateState createState() => _TextFormFieldTemplateState();
+  State<TextFormFieldTemplate> createState() => _TextFormFieldTemplateState();
 }
 
 class _TextFormFieldTemplateState extends State<TextFormFieldTemplate> {

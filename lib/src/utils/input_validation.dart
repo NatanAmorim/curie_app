@@ -11,4 +11,6 @@ String? validateInput({
   } else if (input.length > maxLength) {
     return 'Maximum  $maxLength characters.';
   }
+
+  return null;
 }

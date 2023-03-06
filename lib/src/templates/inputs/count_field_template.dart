@@ -29,7 +29,7 @@ class _CountFieldTemplateState extends State<CountFieldTemplate> {
             )),
         Text(
           widget.value.toString(),
-          style: Theme.of(context).textTheme.headline6!.copyWith(
+          style: Theme.of(context).textTheme.titleLarge!.copyWith(
                 color: Colors.orangeAccent,
               ),
         ),

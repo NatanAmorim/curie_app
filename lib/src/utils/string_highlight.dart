@@ -8,8 +8,9 @@ final int __int64MaxValue = double.maxFinite.toInt();
 
 /// Widget that renders a string with sub-string highlighting.
 class StringHighlight extends StatelessWidget {
-  StringHighlight(
-      {this.caseSensitive = false,
+  const StringHighlight(
+      {super.key,
+      this.caseSensitive = false,
       this.maxLines,
       this.overflow = TextOverflow.clip,
       this.term,
@@ -73,7 +74,7 @@ class StringHighlight extends StatelessWidget {
     final String textLC = caseSensitive ? text : text.toLowerCase();
 
     // corner case: if both term and terms array are passed then combine
-    final List<String> termList = [term ?? '', ...(terms ?? [])];
+    final List<String> termList = [term ?? '', ...terms ?? []];
 
     // remove empty search terms ('') because they cause infinite loops
     final List<String> termListLC = termList
@@ -81,7 +82,7 @@ class StringHighlight extends StatelessWidget {
         .map((string) => caseSensitive ? string : string.toLowerCase())
         .toList();
 
-    List<InlineSpan> children = [];
+    final List<InlineSpan> children = [];
 
     int start = 0;
     int idx = 0; // walks text (string that is searched)
@@ -109,7 +110,7 @@ class StringHighlight extends StatelessWidget {
               continue; // preceding character isn't delimiter so disqualify
             }
 
-            int followingIdx = at + termListLC[i].length;
+            final int followingIdx = at + termListLC[i].length;
             if (followingIdx < textLC.length &&
                 !wordDelimiters.contains(textLC[
                     followingIdx])) // is character following the search term a delimiter?
@@ -140,7 +141,7 @@ class StringHighlight extends StatelessWidget {
         }
 
         // output the match using desired highlighting
-        int termLen = termListLC[iNearest].length;
+        final int termLen = termListLC[iNearest].length;
         children.add(TextSpan(
             text: text.substring(start, idxNearest + termLen),
             style: textStyleHighlight));

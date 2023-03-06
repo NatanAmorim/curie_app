@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class SearchTextFieldTemplate extends StatefulWidget {
-  const SearchTextFieldTemplate({
+class SearchTextFieldWidget extends StatefulWidget {
+  const SearchTextFieldWidget({
     required this.controller,
     required this.onPressed,
     required this.onChanged,
@@ -13,20 +14,20 @@ class SearchTextFieldTemplate extends StatefulWidget {
   final ValueChanged<String> onChanged;
 
   @override
-  _SearchTextFieldTemplateState createState() =>
-      _SearchTextFieldTemplateState();
+  State<SearchTextFieldWidget> createState() => _SearchTextFieldWidgetState();
 }
 
-class _SearchTextFieldTemplateState extends State<SearchTextFieldTemplate> {
+class _SearchTextFieldWidgetState extends State<SearchTextFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: const BoxConstraints(
-        minWidth: 100,
-        maxWidth: 350,
+        minWidth: 300,
+        maxWidth: 600,
       ),
       child: TextField(
         controller: widget.controller,
+        inputFormatters: [SearchTextFormatter()],
         decoration: InputDecoration(
           hintStyle: const TextStyle(
             fontWeight: FontWeight.w400,
@@ -39,16 +40,34 @@ class _SearchTextFieldTemplateState extends State<SearchTextFieldTemplate> {
             color: Theme.of(context).hintColor,
           ),
           suffixIcon: Tooltip(
-            message: 'Clear Text',
+            message: 'Clean search',
             child: IconButton(
               icon: Icon(Icons.cancel, color: Colors.grey[600]),
               onPressed: widget.onPressed,
             ),
           ),
         ),
-        maxLength: 20,
+        maxLength: 30,
         onChanged: widget.onChanged,
       ),
     );
+  }
+}
+
+class SearchTextFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
+    // this part remove double whitespaces
+    if (newValue.text.endsWith('  ')) {
+      return TextEditingValue(
+        text: newValue.text.replaceFirst('  ', ' '),
+        selection: TextSelection.collapsed(offset: newValue.text.length - 1),
+      );
+    }
+
+    return newValue;
   }
 }
