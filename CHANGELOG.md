@@ -2,6 +2,14 @@
 
 All notable changes in this project will be documented in this file.
 
+## Curie v2023.3.6+2-Pre-Alpha
+
+- Added Dio package and started implementing.
+- Added FlutterSecureStorage package (not using yet).
+- Started implementing GoRouter.
+- Now using Fade Animation in the Stack controlled by navigation rail.
+- Added ErrorView, a view to display errors to the user with UI.
+
 ## Curie v2023.3.6+1-Pre-Alpha
 
 - Added Riverpod package.

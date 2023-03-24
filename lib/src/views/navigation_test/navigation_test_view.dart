@@ -1,10 +1,14 @@
+import 'package:curie/src/templates/widgets/Fade_indexed_stack_template.dart';
 import 'package:curie/src/templates/widgets/appbar_template.dart';
+import 'package:curie/src/views/navigation_test/first_widget.dart';
+import 'package:curie/src/views/navigation_test/second_widget.dart';
+import 'package:curie/src/views/navigation_test/third_widget.dart';
 import 'package:flutter/material.dart';
 
 class NavigationTestView extends StatefulWidget {
   const NavigationTestView({Key? key}) : super(key: key);
 
-  static const routeName = '/navigation_test';
+  static const routeName = '/';
 
   @override
   State<NavigationTestView> createState() => _NavigationTestViewState();
@@ -15,11 +19,11 @@ class _NavigationTestViewState extends State<NavigationTestView>
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _selectedIndex = 0;
   bool isExtended = false;
-  late AnimationController _animationController;
+  late AnimationController _animatedIconAnimationController;
 
   @override
   void initState() {
-    _animationController = AnimationController(
+    _animatedIconAnimationController = AnimationController(
       duration: const Duration(milliseconds: 150),
       vsync: this,
     );
@@ -28,7 +32,7 @@ class _NavigationTestViewState extends State<NavigationTestView>
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _animatedIconAnimationController.dispose();
     super.dispose();
   }
 
@@ -44,14 +48,14 @@ class _NavigationTestViewState extends State<NavigationTestView>
           icon: AnimatedIcon(
             icon: AnimatedIcons.menu_close,
             size: 28,
-            progress: _animationController,
+            progress: _animatedIconAnimationController,
           ),
           onPressed: () {
             setState(() => isExtended = !isExtended);
             if (isExtended) {
-              _animationController.forward();
+              _animatedIconAnimationController.forward();
             } else {
-              _animationController.reverse();
+              _animatedIconAnimationController.reverse();
             }
           },
         ),
@@ -124,7 +128,7 @@ class _NavigationTestViewState extends State<NavigationTestView>
           ),
           // This is the main content.
           Expanded(
-            child: IndexedStack(
+            child: FadeIndexedStackTemplate(
               index: _selectedIndex,
               children: const [
                 FirstWidget(),
@@ -136,47 +140,5 @@ class _NavigationTestViewState extends State<NavigationTestView>
         ],
       ),
     ));
-  }
-}
-
-class FirstWidget extends StatelessWidget {
-  const FirstWidget({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'This is the first Widget',
-        style: Theme.of(context).textTheme.displayMedium,
-      ),
-    );
-  }
-}
-
-class SecondWidget extends StatelessWidget {
-  const SecondWidget({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'This is the second Widget',
-        style: Theme.of(context).textTheme.displayMedium,
-      ),
-    );
-  }
-}
-
-class ThirdWidget extends StatelessWidget {
-  const ThirdWidget({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'This is the third Widget',
-        style: Theme.of(context).textTheme.displayMedium,
-      ),
-    );
   }
 }

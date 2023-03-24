@@ -32,6 +32,18 @@
      ^ RELEASE                            ^ RELEASE CANDIDATES
 ```
 
+## TODO
+
+Some of the things needed for release.
+
+- [x] Implement Theme switcher.
+- [x] Implement Language switcher.
+- [x] Implement State Managament and Dependecy injection with Riverpod.
+- [ ] Implement Routing with GoRouter.
+- [ ] Implement API with DIO and cancelation token.
+- [ ] Connect with [Curie Api](https://github.com/NatanAmorim/curie_api).
+- [ ] Make Responsive to fit all screen sizes.
+
 ### Pull Request
 
 - Clearly describe what you aim to add or fix.

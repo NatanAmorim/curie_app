@@ -1,7 +1,7 @@
 import 'package:curie/main.dart';
 import 'package:curie/src/constants/themes.dart';
+import 'package:curie/src/router.dart';
 import 'package:curie/src/views/error/error_view.dart';
-import 'package:curie/src/views/navigation_test/navigation_test_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -32,7 +32,8 @@ class App extends ConsumerWidget {
     return AnimatedBuilder(
       animation: ref.watch(settingsProvider),
       builder: (BuildContext context, Widget? child) {
-        return MaterialApp(
+        return MaterialApp.router(
+          routerConfig: router,
           debugShowCheckedModeBanner: false,
           // Provide the generated AppLocalizations to the MaterialApp. This
           // allows descendant Widgets to display the correct translations
@@ -70,10 +71,6 @@ class App extends ConsumerWidget {
           // returns to the app after it has been killed while running in the
           // background.
           restorationScopeId: 'app',
-
-          home: const NavigationTestView(),
-          // Define a function to handle named routes in order to support
-          // Flutter web url navigation and deep linking.
         );
       },
     );
