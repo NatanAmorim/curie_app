@@ -476,3 +476,5 @@ $RECYCLE.BIN/
 !.vscode/extensions.json
 .vscode/tasks.json
 .vscode/settings.json
+.flutter-plugins
+.flutter-plugins-dependencies

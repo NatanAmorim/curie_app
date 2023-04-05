@@ -2,6 +2,10 @@
 
 All notable changes in this project will be documented in this file.
 
+## Curie v2023.3.6+3-Pre-Alpha
+
+- Fixed route error.
+
 ## Curie v2023.3.6+2-Pre-Alpha
 
 - Added Dio package and started implementing.
