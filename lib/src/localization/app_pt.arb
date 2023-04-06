@@ -12,5 +12,8 @@
   "general": "Geral",
   "settings": "Configurações",
   "cancel": "CANCELAR",
-  "ok": "OK"
+  "ok": "OK",
+  "error": "Erro",
+  "pageNotFound": "Página não encontrada",
+  "unknownError": "Ocorreu um erro desconhecido."
 }

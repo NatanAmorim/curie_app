@@ -11,6 +11,8 @@ final settingsProvider = ChangeNotifierProvider(
 );
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   // This object is where the state of our providers will be stored.
   final providerContainer = ProviderContainer();
 

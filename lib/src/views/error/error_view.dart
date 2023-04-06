@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
 /// Default error page implementation for Material.
@@ -21,13 +22,14 @@ class ErrorView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO translate
+    final AppLocalizations localizations = AppLocalizations.of(context)!;
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.error,
           title: Text(
-            'Error',
+            localizations.error,
             style: TextStyle(
               fontSize: 24.0,
               fontWeight: FontWeight.w400,
@@ -41,15 +43,15 @@ class ErrorView extends StatelessWidget {
             children: [
               Text(
                 errorDetails == null
-                    ? 'Page not found'
-                    : 'An unknown error has occurred.',
+                    ? localizations.pageNotFound
+                    : localizations.unknownError,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.displayMedium,
               ),
               const SizedBox(height: 20),
               SelectableText(
                 errorDetails == null
-                    ? error?.toString() ?? 'Page not found'
+                    ? error?.toString() ?? localizations.pageNotFound
                     : errorDetails!.exceptionAsString(),
                 style: Theme.of(context).textTheme.bodyLarge,
               ),

@@ -2,6 +2,13 @@
 
 All notable changes in this project will be documented in this file.
 
+## Curie v2023.3.6+4-Pre-Alpha
+
+- Added 'WidgetsFlutterBinding.ensureInitialized();' needed in SettingsService.
+- Added localizations to error page.
+- Fixed navigation rail size while keeping scrollable (tested on Mac only).
+- Update all Riverpod pkgs version.
+
 ## Curie v2023.3.6+3-Pre-Alpha
 
 - Fixed route error.

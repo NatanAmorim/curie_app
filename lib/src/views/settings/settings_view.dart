@@ -16,6 +16,7 @@ class SettingsView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final AppLocalizations localizations = AppLocalizations.of(context)!;
     final ThemeData theme = Theme.of(context);
     final TextStyle textStyle = theme.textTheme.bodyMedium!;
     final List<Widget> aboutBoxChildren = <Widget>[
@@ -25,7 +26,7 @@ class SettingsView extends ConsumerWidget {
           children: <TextSpan>[
             TextSpan(
               style: textStyle,
-              text: '${AppLocalizations.of(context)!.appDescription}\n',
+              text: '${localizations.appDescription}\n',
             ),
             TextSpan(
               style: textStyle.copyWith(color: theme.colorScheme.primary),
@@ -39,7 +40,7 @@ class SettingsView extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.settings),
+        title: Text(localizations.settings),
       ),
       body: SingleChildScrollView(
         child: Row(
@@ -59,7 +60,7 @@ class SettingsView extends ConsumerWidget {
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          AppLocalizations.of(context)!.general,
+                          localizations.general,
                           style: Theme.of(context).textTheme.headlineSmall,
                         ),
                       ),
@@ -79,8 +80,7 @@ class SettingsView extends ConsumerWidget {
                               ListTile(
                                 leading: const Icon(Icons.palette),
                                 trailing: const Icon(Icons.arrow_right),
-                                title: Text(
-                                    AppLocalizations.of(context)!.appTheme),
+                                title: Text(localizations.appTheme),
                                 onTap: () {
                                   final ThemeMode oldTheme = ref.read(
                                     settingsProvider.select((s) => s.themeMode),
@@ -91,8 +91,7 @@ class SettingsView extends ConsumerWidget {
                                     context: context,
                                     builder: (context) => AlertDialog(
                                       title: Text(
-                                        AppLocalizations.of(context)!
-                                            .selectTheme,
+                                        localizations.selectTheme,
                                       ),
                                       content: Scrollbar(
                                         child: SingleChildScrollView(
@@ -101,8 +100,7 @@ class SettingsView extends ConsumerWidget {
                                               const Divider(),
                                               RadioListTile<ThemeMode>(
                                                 title: Text(
-                                                  AppLocalizations.of(context)!
-                                                      .systemTheme,
+                                                  localizations.systemTheme,
                                                 ),
                                                 value: ThemeMode.system,
                                                 groupValue: ref.watch(
@@ -114,8 +112,7 @@ class SettingsView extends ConsumerWidget {
                                               ),
                                               RadioListTile<ThemeMode>(
                                                 title: Text(
-                                                  AppLocalizations.of(context)!
-                                                      .lightTheme,
+                                                  localizations.lightTheme,
                                                 ),
                                                 value: ThemeMode.light,
                                                 groupValue: ref.watch(
@@ -127,8 +124,7 @@ class SettingsView extends ConsumerWidget {
                                               ),
                                               RadioListTile<ThemeMode>(
                                                 title: Text(
-                                                  AppLocalizations.of(context)!
-                                                      .darkTheme,
+                                                  localizations.darkTheme,
                                                 ),
                                                 value: ThemeMode.dark,
                                                 groupValue: ref.watch(
@@ -160,15 +156,14 @@ class SettingsView extends ConsumerWidget {
                                             Navigator.of(context).pop();
                                           },
                                           child: Text(
-                                            AppLocalizations.of(context)!
-                                                .cancel,
+                                            localizations.cancel,
                                           ),
                                         ),
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.of(context).pop(),
                                           child: Text(
-                                            AppLocalizations.of(context)!.ok,
+                                            localizations.ok,
                                           ),
                                         )
                                       ],
@@ -180,7 +175,7 @@ class SettingsView extends ConsumerWidget {
                                 leading: const Icon(Icons.language),
                                 trailing: const Icon(Icons.arrow_right),
                                 title: Text(
-                                  AppLocalizations.of(context)!.appLanguage,
+                                  localizations.appLanguage,
                                 ),
                                 onTap: () {
                                   final Locale oldLocale = ref.read(
@@ -192,8 +187,7 @@ class SettingsView extends ConsumerWidget {
                                     context: context,
                                     builder: (context) => AlertDialog(
                                       title: Text(
-                                        AppLocalizations.of(context)!
-                                            .selectLanguage,
+                                        localizations.selectLanguage,
                                       ),
                                       content: Scrollbar(
                                         child: SingleChildScrollView(
@@ -245,15 +239,14 @@ class SettingsView extends ConsumerWidget {
                                             Navigator.of(context).pop();
                                           },
                                           child: Text(
-                                            AppLocalizations.of(context)!
-                                                .cancel,
+                                            localizations.cancel,
                                           ),
                                         ),
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.of(context).pop(),
                                           child: Text(
-                                            AppLocalizations.of(context)!.ok,
+                                            localizations.ok,
                                           ),
                                         )
                                       ],
@@ -265,7 +258,7 @@ class SettingsView extends ConsumerWidget {
                                 leading: const Icon(Icons.info),
                                 trailing: const Icon(Icons.arrow_right),
                                 title: Text(
-                                  AppLocalizations.of(context)!.aboutCurie,
+                                  localizations.aboutCurie,
                                 ),
                                 onTap: () => showAboutDialog(
                                   context: context,

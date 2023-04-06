@@ -69,7 +69,7 @@ class _NavigationTestViewState extends State<NavigationTestView>
           SingleChildScrollView(
             child: ConstrainedBox(
               constraints: BoxConstraints(
-                minHeight: MediaQuery.of(context).size.height - 100,
+                minHeight: MediaQuery.of(context).size.height - 58,
               ),
               child: IntrinsicHeight(
                 child: NavigationRail(
