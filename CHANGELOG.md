@@ -2,18 +2,23 @@
 
 All notable changes in this project will be documented in this file.
 
-## Curie v2023.3.6+4-Pre-Alpha
+## Curie v2023.5.23-Pre-Alpha
+
+- Added minimum window size plugin.
+- Added warning about ChangeNotifierProviders and using something else.
+
+## Curie v2023.4.6-Pre-Alpha
 
 - Added 'WidgetsFlutterBinding.ensureInitialized();' needed in SettingsService.
 - Added localizations to error page.
 - Fixed navigation rail size while keeping scrollable (tested on Mac only).
 - Update all Riverpod pkgs version.
 
-## Curie v2023.3.6+3-Pre-Alpha
+## Curie v2023.4.5-Pre-Alpha
 
 - Fixed route error.
 
-## Curie v2023.3.6+2-Pre-Alpha
+## Curie v2023.3.24-Pre-Alpha
 
 - Added Dio package and started implementing.
 - Added FlutterSecureStorage package (not using yet).
