@@ -2,6 +2,10 @@
 
 All notable changes in this project will be documented in this file.
 
+## Curie v2023.5.26-Pre-Alpha
+
+- Updated dependencies.
+
 ## Curie v2023.5.23-Pre-Alpha
 
 - Added minimum window size plugin.
