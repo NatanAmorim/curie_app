@@ -43,7 +43,7 @@ class _NavigationTestViewState extends State<NavigationTestView>
       key: _scaffoldKey,
       appBar: appBarTemplate(
         context: context,
-        title: 'Title',
+        title: 'Home',
         leading: IconButton(
           icon: AnimatedIcon(
             icon: AnimatedIcons.menu_close,
@@ -60,9 +60,14 @@ class _NavigationTestViewState extends State<NavigationTestView>
           },
         ),
       ),
-      endDrawer: const Drawer(
-        backgroundColor: Colors.green,
-        child: Center(child: Text('This is a side panel')),
+      endDrawer: Drawer(
+        backgroundColor: Theme.of(context).colorScheme.secondary,
+        child: Center(
+          child: Text(
+            'This is a side panel',
+            style: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+          ),
+        ),
       ),
       body: Row(
         children: [
@@ -75,10 +80,6 @@ class _NavigationTestViewState extends State<NavigationTestView>
                 child: NavigationRail(
                   extended: isExtended,
                   useIndicator: true,
-                  selectedIconTheme: IconThemeData(
-                      color: Theme.of(context).colorScheme.secondary),
-                  selectedLabelTextStyle:
-                      TextStyle(color: Theme.of(context).colorScheme.secondary),
                   selectedIndex: _selectedIndex,
                   onDestinationSelected: (index) {
                     setState(() {

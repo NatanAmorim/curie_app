@@ -59,7 +59,6 @@ class _BottomNavigationBarTemplateState
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
         onTap: _onItemTapped,
       ),
     );

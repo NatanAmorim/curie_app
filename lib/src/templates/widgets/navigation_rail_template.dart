@@ -13,10 +13,6 @@ class _NavigationRailTemplateState extends State<NavigationRailTemplate> {
     int selectedIndex = 0;
     return NavigationRail(
       useIndicator: false,
-      selectedIconTheme:
-          IconThemeData(color: Theme.of(context).colorScheme.secondary),
-      selectedLabelTextStyle:
-          TextStyle(color: Theme.of(context).colorScheme.secondary),
       selectedIndex: selectedIndex,
       onDestinationSelected: (int index) {
         setState(() {

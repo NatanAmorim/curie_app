@@ -29,7 +29,7 @@ class SettingsView extends ConsumerWidget {
               text: '${localizations.appDescription}\n',
             ),
             TextSpan(
-              style: textStyle.copyWith(color: theme.colorScheme.primary),
+              style: textStyle.copyWith(color: theme.colorScheme.tertiary),
               text: 'https://github.com/NatanAmorim/curie',
             ),
             TextSpan(style: textStyle, text: '.'),
