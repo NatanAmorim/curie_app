@@ -60,6 +60,7 @@ dependencies:
   flutter_riverpod: ^2.3.2
   riverpod_annotation: ^2.0.2
   freezed_annotation: ^2.2.0
+  flex_color_scheme: ^7.1.2
 
 dev_dependencies:
   flutter_test:

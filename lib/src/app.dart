@@ -1,7 +1,7 @@
 import 'package:curie/main.dart';
-import 'package:curie/src/constants/themes.dart';
 import 'package:curie/src/router.dart';
 import 'package:curie/src/views/error/error_view.dart';
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -62,8 +62,12 @@ class App extends ConsumerWidget {
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.
-          theme: lightTheme,
-          darkTheme: darkTheme,
+          theme: FlexThemeData.light(
+            scheme: FlexScheme.material,
+            useMaterial3: true,
+          ),
+          darkTheme: FlexThemeData.dark(
+              scheme: FlexScheme.material, useMaterial3: true),
           themeMode: ref.watch(settingsProvider.select((s) => s.themeMode)),
 
           // Providing a restorationScopeId allows the Navigator built by the
